@@ -10,19 +10,20 @@ end
 
 a_frac=a-a_lower;
 if(a_frac>0)
-    V0=exp(1)/(exp(1)-a_frac);
+    V0=exp(1)/(exp(1)+a_frac);
     repeat=1;
     while repeat
         V=rand(3,1);
         if V(3) <= V0
-            c2=1-log(V(2));
-            eta=V(1)*c2^(a_frac-1);
+            c2=V(2)^(1/a_frac); 
+            eta=V(1)*c2^(a_frac-1); % step 4
         else
-            c2=V(2)^(1/a_frac);
-            eta=V(1)*c2^(-c2);
+            %step 5
+            c2=1-log(V(2));
+            eta=V(1)*exp(-c2);
         end
         
-        repeat= eta>c2^(a_frac-1)*exp(-c2);
+        repeat= eta>c2^(a_frac-1)*exp(-c2);% step 6
     end 
 else
     c2=0;
