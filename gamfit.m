@@ -1,7 +1,8 @@
-function [ a,b ] = gamfit( x )
+function param = gamfit( x )
 %GAMFIT fits a gamma distribution
-% [ a,b ] = gamfit( x )
-% %parameters a (shape) and b (scale)
+% param  = gamfit( x )
+% parameters a (shape) and b (scale)
+% param=[ a,b ]
 %
 
 n=length(x);
@@ -19,5 +20,6 @@ for i=1:4
 end
 b = xbar./a;
 
+param=[ a,b ] ;
 end
 
