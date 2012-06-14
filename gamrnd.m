@@ -1,5 +1,13 @@
 function x=gamrnd(a,b)
-
+%x=gamrnd(a,b)
+%  generate gamma random variable with parameters a (shape) and b (scale)
+%
+%
+% http://en.wikipedia.org/wiki/Gamma_distribution
+% Ahrens, J. H. and Dieter, U. (1982). Generating gamma variates by a 
+% modified rejection technique. Communications of the ACM, 25, 47–54. 
+% Algorithm GD, p. 53
+%
 a_lower=floor(a);
 
 if(a>=1)

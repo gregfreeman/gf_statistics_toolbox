@@ -1,5 +1,9 @@
 function [ a,b ] = gamfit( x )
 %GAMFIT fits a gamma distribution
+% [ a,b ] = gamfit( x )
+% %parameters a (shape) and b (scale)
+%
+
 n=length(x);
 xbar=sum(x) ./ n;
 % sbar=sum(x.^2) ./ n;
